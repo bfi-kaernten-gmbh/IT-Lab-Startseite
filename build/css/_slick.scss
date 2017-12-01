@@ -1,0 +1,50 @@
+//main: stundenplan.scss
+// styles for the slick slider buttons
+
+.slick-arrow {
+  z-index: 10;
+  position: absolute;
+  top: -40px;
+  color: var(--sColor3);
+  z-index: 100;
+}
+.slick-prev {
+  left: -110px;
+}
+.slick-next {
+  right: 15px;
+}
+
+
+.slick-dots {
+  position: absolute;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+
+
+  li {
+    width: 20%;
+    position: relative;
+
+    button {
+      transition: 0.3s;
+      height: 30px;
+      width: 100%;
+      background-color: rgba(255,255,255,0.7);
+      border: 0;
+      outline: 0;
+      color: transparent;
+    }
+    &.slick-active {
+      button {
+        background-color: rgba(255,255,255,1);
+      }
+    }
+  }
+}

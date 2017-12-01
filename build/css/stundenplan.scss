@@ -1,0 +1,259 @@
+// Apply a natural box layout model to all elements
+// but allowing components to change
+// http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+@import "_slick.scss";
+
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+$lobster: 'Lobster', cursive;
+body {
+  --sColor1: rgba(255,152,0 ,1);
+  --sColor2: rgba(255,87,34 ,1);
+  --sColor3: rgba(244,67,54 ,1);
+  --sColor4: rgba(233,30,99 ,1);
+  --sColor5: #2b2b2b;
+}
+
+h3 {
+  font-size: 10pt;
+  margin: 0;
+  display: block;
+}
+
+$lehrjahreColors: rgba(189,189,189 , 0.3) rgba(224,224,224 ,0.3) rgba(238,238,238 ,0.3) rgba(245,245,245 ,0.3);
+//$mainBackgroundColors: rgba(255,152,0 ,1) rgba(255,87,34 ,1) rgba(244,67,54 ,1) rgba(233,30,99 ,1) rgba(156,39,176 ,1) rgba(103,58,183 ,1);
+$subContainerDivsMinHeight: 30px 50px 35px 100px 150px 20px 20px;
+
+.flexbox {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+}
+#schedule {
+  transition: 0.3s;
+  border: 6px solid #fff;
+  border-top-width: 50px;
+  border-radius: 4px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  position: absolute;
+  bottom: 5vh;
+  right: 5vh;
+  z-index: 10000;
+  width: 740px;
+  font-size: 10pt;
+  background-color: #fff;
+
+  i {
+    cursor: pointer;
+    font-size: 24pt!important;
+  }
+
+  //grid-template-rows: 30px 50px 30px 100px 200px;
+  //grid-template-rows: 600px;
+
+  &::before, &::after {
+    opacity: 0;
+    transition: 0.3s;
+    content: "";
+    background-color: var(--sColor3);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    top: -40px;
+    z-index: 2;
+  }
+  &::before {
+    right: 5%;
+  }
+  &::after  {
+    left: 5%;
+  }
+
+  .close_schedule {
+    position: absolute;
+    top: -40px;
+    left: 48px;
+    color: var(--sColor3);
+    z-index: 5;
+    transition: 0.3s;
+  }
+
+  .heading {
+    transition: 0.2s;
+    color: var(--sColor3);
+    font-size: 20pt;
+    position: absolute;
+    top: -43px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    font-family: $lobster;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  #schedule_weeks {
+    margin-left: 124px;
+    position: relative;
+    width: calc(100% - 124px);
+    .schedule {
+      display: grid;
+      grid-template-columns: repeat(5, 120px);
+      grid-column-gap: 4px;
+    }
+  }
+
+  .p_el {
+    @extend .flexbox;
+    color: white;
+    padding: 8px 12px;
+    width: 100%;
+    //height: 100%;
+    //border: 1px solid #2b2b2b;
+    border-spacing: 0;
+  }
+  .p_el-child {
+    @extend .p_el;
+    height: 100%;
+  }
+  .p_el-np {
+    @extend .p_el;
+    padding: 0;
+  }
+
+  .sub_container {
+    transition: 0.3s;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 30px 50px 35px 100px auto;
+    grid-row-gap: 4px;
+    $pagWidth: 100%;
+    width: $pagWidth;
+
+    > div {
+      justify-self: stretch;
+    }
+    > div:nth-child(2) {
+      font-size: 12pt;
+      font-weight: bold;
+    }
+    > div:nth-child(odd) {
+      background-color: var(--sColor3);
+    }
+    > div:nth-child(even) {
+      background-color: var(--sColor1);
+    }
+    // color all 5 schedule elements different
+    // @for $i from 1 to 7 {
+    //   //&:nth-child(#{$i})
+    //   > div:nth-child(#{$i}){
+    //     background-color: var(--sColor#{$i});
+    //   }
+    // }
+    .trainerContainer {
+      align-items: flex-start;
+      align-content: flex-start;
+      .t_el {
+        width: 100%;
+      }
+    }
+    .lehrjahre {
+      @extend .flexbox;
+      color: white;
+
+      div {
+        height: 35px;
+        width: $pagWidth / 4;
+
+        @for $i from 1 through 4 {
+          &:nth-child(#{$i}) {
+            //background-color: nth($lehrjahreColors, $i)
+            background-color: var(--s#{$i});
+          }
+        }
+
+        // &:nth-child(1) {
+        //   background-color: nth($lehrjahreColors, 1)
+        // }
+        // &:nth-child(2) {
+        //   background-color: nth($lehrjahreColors, 2)
+        // }
+        // &:nth-child(3) {
+        //   background-color: nth($lehrjahreColors, 3)
+        // }
+        // &:nth-child(4) {
+        //   background-color: nth($lehrjahreColors, 4)
+        // }
+      }
+    }
+  }
+  .pagination {
+    width: 120px;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    .lehrjahre {
+      .p_el {
+        padding: 4px;
+        font-size: 10pt;
+      }
+    }
+  }
+
+  &.mini {
+    cursor: pointer;
+    border-top-width: 25px;
+    background-repeat: no-repeat;
+    background-image:
+      linear-gradient(#fff 100%, transparent 0),
+      linear-gradient(#fff 100%, transparent 0),
+      linear-gradient(#fff 100%, transparent 0),
+
+      linear-gradient(var(--sColor3) 100%, transparent 0),
+      linear-gradient(var(--sColor1) 100%, transparent 0),
+      linear-gradient(var(--sColor3) 100%, transparent 0),
+      linear-gradient(var(--sColor1) 100%, transparent 0),
+    ;
+    background-size:
+      4px 100%,
+      4px 100%,
+      4px 100%,
+      100% 23%,
+      100% 23%,
+      100% 23%,
+      100% 23%,
+    ;
+    background-position:
+      calc(25% - 2px) 0,
+      calc(51% - 2px) 0,
+      calc(78% - 2px) 0,
+      0 0,
+      0 34%,
+      0 calc(66% + 1.5px),
+      0 calc(98% + 2.5px),
+    ;
+    &::before, &::after {
+      top: -20px;
+      height: 15px;
+      width: 15px;
+      opacity: 1;
+    }
+    > div {
+      opacity: 0;
+      overflow: hidden;
+    }
+    .heading {
+      top: -22.5px;
+      font-size: 11pt;
+    }
+    .close_schedule {
+      opacity: 0;
+    }
+
+  }
+}

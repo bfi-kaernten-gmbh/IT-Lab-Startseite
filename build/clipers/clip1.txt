@@ -1,0 +1,19 @@
+<div class="segmenter__background" style=""></div>
+    <div class="segmenter__pieces">
+      <div class="segmenter__pieceWrap">
+          <div class="segmenter__shadow" style="top: 80%; left: 10%; width: 30%; height: 20%"></div>
+          <div class="segmenter__piece" style="-webkit-clip-path: polygon(10% 80%, 40% 80%, 40% 100%, 10% 100%); clip-path: polygon(10% 80%, 40% 80%, 40% 100%, 10% 100%)"></div>
+      </div>
+      <div class="segmenter__pieceWrap">
+          <div class="segmenter__shadow" style="top: 2%; left: 2%; width: 40%; height: 40%"></div>
+          <div class="segmenter__piece" style="-webkit-clip-path: polygon(2% 2%, 42% 2%, 42% 42%, 2% 42%); clip-path: polygon(2% 2%, 42% 2%, 42% 42%, 2% 42%)"></div>
+      </div>
+      <div class="segmenter__pieceWrap">
+          <div class="segmenter__shadow" style="top: 30%; left: 60%; width: 30%; height: 60%"></div>
+          <div class="segmenter__piece" style="-webkit-clip-path: polygon(60% 30%, 90% 30%, 90% 90%, 60% 90%); clip-path: polygon(60% 30%, 90% 30%, 90% 90%, 60% 90%)"></div>
+      </div>
+      <div class="segmenter__pieceWrap">
+          <div class="segmenter__shadow" style="top: 10%; left: 20%; width: 50%; height: 60%"></div>
+          <div class="segmenter__piece" style="-webkit-clip-path: polygon(20% 10%, 70% 10%, 70% 70%, 20% 70%); clip-path: polygon(20% 10%, 70% 10%, 70% 70%, 20% 70%)"></div>
+      </div>
+    </div>

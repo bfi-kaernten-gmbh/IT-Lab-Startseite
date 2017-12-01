@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css?family=Lobster");
+.slick-arrow {
+  z-index: 10;
+  position: absolute;
+  top: -40px;
+  color: var(--sColor3);
+  z-index: 100;
+}
+
+.slick-prev {
+  left: -110px;
+}
+
+.slick-next {
+  right: 15px;
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.slick-dots li {
+  width: 20%;
+  position: relative;
+}
+
+.slick-dots li button {
+  transition: 0.3s;
+  height: 30px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 0;
+  outline: 0;
+  color: transparent;
+}
+
+.slick-dots li.slick-active button {
+  background-color: white;
+}
+
+body {
+  --sColor1: #ff9800;
+  --sColor2: #ff5722;
+  --sColor3: #f44336;
+  --sColor4: #e91e63;
+  --sColor5: #2b2b2b;
+}
+
+h3 {
+  font-size: 10pt;
+  margin: 0;
+  display: block;
+}
+
+.flexbox, #schedule .p_el, #schedule .p_el-child, #schedule .p_el-np, #schedule .sub_container .lehrjahre {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+}
+
+#schedule {
+  transition: 0.3s;
+  border: 6px solid #fff;
+  border-top-width: 50px;
+  border-radius: 4px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  position: absolute;
+  bottom: 5vh;
+  right: 5vh;
+  z-index: 10000;
+  width: 740px;
+  font-size: 10pt;
+  background-color: #fff;
+}
+
+#schedule i {
+  cursor: pointer;
+  font-size: 24pt !important;
+}
+
+#schedule::before, #schedule::after {
+  opacity: 0;
+  transition: 0.3s;
+  content: "";
+  background-color: var(--sColor3);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  top: -40px;
+  z-index: 2;
+}
+
+#schedule::before {
+  right: 5%;
+}
+
+#schedule::after {
+  left: 5%;
+}
+
+#schedule .close_schedule {
+  position: absolute;
+  top: -40px;
+  left: 48px;
+  color: var(--sColor3);
+  z-index: 5;
+  transition: 0.3s;
+}
+
+#schedule .heading {
+  transition: 0.2s;
+  color: var(--sColor3);
+  font-size: 20pt;
+  position: absolute;
+  top: -43px;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  font-family: "Lobster", cursive;
+}
+
+#schedule * {
+  box-sizing: border-box;
+}
+
+#schedule #schedule_weeks {
+  margin-left: 124px;
+  position: relative;
+  width: calc(100% - 124px);
+}
+
+#schedule #schedule_weeks .schedule {
+  display: grid;
+  grid-template-columns: repeat(5, 120px);
+  grid-column-gap: 4px;
+}
+
+#schedule .p_el, #schedule .p_el-child, #schedule .p_el-np {
+  color: white;
+  padding: 8px 12px;
+  width: 100%;
+  border-spacing: 0;
+}
+
+#schedule .p_el-child {
+  height: 100%;
+}
+
+#schedule .p_el-np {
+  padding: 0;
+}
+
+#schedule .sub_container {
+  transition: 0.3s;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 30px 50px 35px 100px auto;
+  grid-row-gap: 4px;
+  width: 100%;
+}
+
+#schedule .sub_container > div {
+  justify-self: stretch;
+}
+
+#schedule .sub_container > div:nth-child(2) {
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+#schedule .sub_container > div:nth-child(odd) {
+  background-color: var(--sColor3);
+}
+
+#schedule .sub_container > div:nth-child(even) {
+  background-color: var(--sColor1);
+}
+
+#schedule .sub_container .trainerContainer {
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+#schedule .sub_container .trainerContainer .t_el {
+  width: 100%;
+}
+
+#schedule .sub_container .lehrjahre {
+  color: white;
+}
+
+#schedule .sub_container .lehrjahre div {
+  height: 35px;
+  width: 25%;
+}
+
+#schedule .sub_container .lehrjahre div:nth-child(1) {
+  background-color: var(--s1);
+}
+
+#schedule .sub_container .lehrjahre div:nth-child(2) {
+  background-color: var(--s2);
+}
+
+#schedule .sub_container .lehrjahre div:nth-child(3) {
+  background-color: var(--s3);
+}
+
+#schedule .sub_container .lehrjahre div:nth-child(4) {
+  background-color: var(--s4);
+}
+
+#schedule .pagination {
+  width: 120px;
+  position: absolute;
+  height: 100%;
+  left: 0;
+}
+
+#schedule .pagination .lehrjahre .p_el, #schedule .pagination .lehrjahre .p_el-child, #schedule .pagination .lehrjahre .p_el-np {
+  padding: 4px;
+  font-size: 10pt;
+}
+
+#schedule.mini {
+  cursor: pointer;
+  border-top-width: 25px;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(#fff 100%, transparent 0), linear-gradient(#fff 100%, transparent 0), linear-gradient(#fff 100%, transparent 0), linear-gradient(var(--sColor3) 100%, transparent 0), linear-gradient(var(--sColor1) 100%, transparent 0), linear-gradient(var(--sColor3) 100%, transparent 0), linear-gradient(var(--sColor1) 100%, transparent 0);
+  background-size: 4px 100%, 4px 100%, 4px 100%, 100% 23%, 100% 23%, 100% 23%, 100% 23%;
+  background-position: calc(25% - 2px) 0, calc(51% - 2px) 0, calc(78% - 2px) 0, 0 0, 0 34%, 0 calc(66% + 1.5px), 0 calc(98% + 2.5px);
+}
+
+#schedule.mini::before, #schedule.mini::after {
+  top: -20px;
+  height: 15px;
+  width: 15px;
+  opacity: 1;
+}
+
+#schedule.mini > div {
+  opacity: 0;
+  overflow: hidden;
+}
+
+#schedule.mini .heading {
+  top: -22.5px;
+  font-size: 11pt;
+}
+
+#schedule.mini .close_schedule {
+  opacity: 0;
+}

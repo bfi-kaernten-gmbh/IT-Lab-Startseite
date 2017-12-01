@@ -1,0 +1,159 @@
+@media all and (max-width: 1380px) {
+  .link {
+    width: 135px;
+    height: 135px;
+  }
+  .link.link1 {
+    /* Goocrux */
+    top: 15%;
+    left: 65%;
+  }
+  .link.link2 {
+    /* LVS */
+    top: 32%;
+  }
+  .link.link3 {
+    /* Fiery */
+    top: 50%;
+    left: 25%;
+  }
+  .link.link4 {
+    /* Scans */
+    left: 25%;
+  }
+  .link.link5 {
+    /* Xpirio */
+    top: 32%;
+  }
+  .link.link6 {
+    /* neues Webmail */
+    top: 50%;
+    left: 65%;
+  }
+  .link p {
+    font-size: 16pt;
+    line-height: 20pt;
+  }
+  .link #gmbh {
+    font-size: 20pt;
+  }
+  .link #lvs {
+    font-size: 24pt;
+  }
+}
+
+@media all and (max-width: 1180px) {
+  .link {
+    width: 115px;
+    height: 115px;
+  }
+  .link p {
+    font-size: 14pt;
+    line-height: 18pt;
+  }
+  .link #gmbh {
+    font-size: 18pt;
+  }
+  .link #lvs {
+    font-size: 22pt;
+  }
+  .sbox {
+    height: 150px;
+  }
+  .sbox .smile, .sbox .greeting {
+    font-size: 24pt;
+  }
+  .sbox .greeting, .sbox .searchBar {
+    left: 120px;
+  }
+  .sbox .searchBar input {
+    height: 40px;
+    width: 300px;
+    font-size: 16pt;
+  }
+  .sbox #clock {
+    width: 90px;
+  }
+  .sbox #clockText {
+    font-size: 24pt;
+  }
+}
+
+@media all and (max-width: 900px), all and (max-height: 600px) {
+  .logo {
+    display: none;
+  }
+  .segmenter__pieces {
+    display: none;
+  }
+  .sbox .smile, .sbox .greeting, .sbox .searchBar {
+    display: none;
+  }
+}
+
+@media all and (max-width: 740px) {
+  #schedule {
+    bottom: 10px;
+    right: 10px;
+    width: calc(100% - 8px);
+    height: auto;
+    max-height: 90vh;
+    transform: translate(10px, 10px);
+  }
+  #schedule .pagination {
+    position: fixed;
+  }
+  #schedule #schedule_weeks {
+    height: 100%;
+  }
+  #schedule #schedule_weeks .schedule {
+    grid-template-columns: 100%;
+  }
+  #schedule .sub_container {
+    margin-bottom: 8px;
+  }
+  #schedule.mini {
+    transform: translate(0, 0);
+  }
+  .link {
+    width: 80px;
+    height: 80px;
+  }
+  .link.link1 {
+    /* Goocrux */
+    top: 15%;
+    left: 65%;
+  }
+  .link.link2 {
+    /* LVS */
+    top: 32%;
+  }
+  .link.link3 {
+    /* Fiery */
+    top: 50%;
+    left: 25%;
+  }
+  .link.link4 {
+    /* Scans */
+    left: 25%;
+  }
+  .link.link5 {
+    /* Xpirio */
+    top: 32%;
+  }
+  .link.link6 {
+    /* neues Webmail */
+    top: 50%;
+    left: 65%;
+  }
+  .link p {
+    font-size: 12pt;
+    line-height: 16pt;
+  }
+  .link #gmbh {
+    font-size: 16pt;
+  }
+  .link #lvs {
+    font-size: 20pt;
+  }
+}
