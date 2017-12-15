@@ -1,10 +1,3 @@
-/**
- * Application entry point
- */
-
-// Load application styles
-
-
 // import required node_modules
 import GetSheetDone from 'get-sheet-done';
 import moment from 'moment';

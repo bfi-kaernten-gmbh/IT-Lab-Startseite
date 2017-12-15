@@ -39,8 +39,6 @@ let config = {
   devtool: 'eval-source-map'  // enable devtool for better debugging expirience
 }
 
-module.exports = config;
-
 if (process.env.Node_ENV === 'production') {
   module.exports.plugins.push(
     new webpack.optimize.UglifyJsPlugin({
@@ -55,3 +53,5 @@ if (process.env.Node_ENV === 'production') {
     // })
   )
 }
+
+module.exports = config;
